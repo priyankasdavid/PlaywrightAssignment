@@ -14,7 +14,6 @@ test('Events', async({page})=>{
     await category.nth(1).selectOption("Hyderabad");
 
     const eventname = "World Tech Summit";
-  //  const Value = await page.locator('h3:has-text(eventname)');
     const eventCard = await page.locator("#event-card").filter({hasText:eventname});
     const eventtitle = await eventCard.locator('h3').textContent();
     const price = await eventCard.locator('p').textContent();
